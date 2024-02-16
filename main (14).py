@@ -3,7 +3,7 @@ dark=int(input("Введите число"))
 if dark>0:
     print("используйте команду принт")
 elif dark<0:
-    print("-1")
+    print("-1") 
 else:
     print("1")
 #Задача 2 
