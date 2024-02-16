@@ -16,3 +16,16 @@ elif dark < 0:
     print(dark,"че так мало надо больше")
 else:
     print("0 не вариант")
+    # Задача 3 
+dark = int(input("Ввод первой переменной"))
+nark = int(input("Ввод второй переменной"))
+if dark > nark:
+    lol = dark - nark
+    print(lol)
+elif dark < nark:
+    lol = dark + nark 
+    print(lol)
+else:
+    lol = dark
+    print(lol)
+    
