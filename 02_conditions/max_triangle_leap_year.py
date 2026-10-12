@@ -1,19 +1,22 @@
-#Задача 1 
-a = int(input())
-b = int(input())
-print(max(a,b))
-#задача 2 
-a = int(input())
-b = int(input())
-c = int(input())
-if a+b > c and a + c > b and b + c >a:
-    print("Да")
-else:
-    print("Нет")
-#Задача 3
-year = int(input())
+"""Условия: максимум, существование треугольника, високосный год."""
 
-if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
-    print("Да")
+# Задача 1. Большее из двух чисел
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+print("Большее число:", max(a, b))
+
+# Задача 2. Существует ли треугольник с такими сторонами
+a = int(input("Сторона a: "))
+b = int(input("Сторона b: "))
+c = int(input("Сторона c: "))
+if a + b > c and a + c > b and b + c > a:
+    print("Да, треугольник существует")
 else:
-    print("Нет")
+    print("Нет, такого треугольника нет")
+
+# Задача 3. Високосный ли год
+year = int(input("Введите год: "))
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print("Да, год високосный")
+else:
+    print("Нет, год не високосный")

@@ -1,31 +1,32 @@
-#Задача 1 
-dark=int(input("Введите число"))
-if dark>0:
-    print("используйте команду принт")
-elif dark<0:
-    print("-1") 
+"""Условия: знак числа и сравнение двух переменных."""
+
+# Задача 1. Знак числа
+number = int(input("Введите число: "))
+if number > 0:
+    print("Число положительное")
+elif number < 0:
+    print(-1)
 else:
-    print("1")
-#Задача 2 
-dark = int(input("Введите чило пофиг какое"))
-if dark > 0:
-    dark / 100
-    print(dark,"Че так много давай меньше")
-elif dark < 0:
-    dark + 1111111111111111
-    print(dark,"че так мало надо больше")
+    print(1)
+
+# Задача 2. Преобразование числа в зависимости от знака
+number = int(input("Введите любое число: "))
+if number > 0:
+    number = number / 100
+    print("Положительное число делим на 100:", number)
+elif number < 0:
+    number = number + 1111111111111111
+    print("К отрицательному числу прибавляем 1111111111111111:", number)
 else:
-    print("0 не вариант")
-    # Задача 3 
-dark = int(input("Ввод первой переменной"))
-nark = int(input("Ввод второй переменной"))
-if dark > nark:
-    lol = dark - nark
-    print(lol)
-elif dark < nark:
-    lol = dark + nark 
-    print(lol)
+    print("Ноль не подходит")
+
+# Задача 3. Разность или сумма двух чисел
+first = int(input("Введите первое число: "))
+second = int(input("Введите второе число: "))
+if first > second:
+    result = first - second
+elif first < second:
+    result = first + second
 else:
-    lol = dark
-    print(lol)
-    
+    result = first
+print("Результат:", result)

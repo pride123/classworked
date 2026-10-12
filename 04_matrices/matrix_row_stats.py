@@ -1,78 +1,42 @@
-#UTF-8
-#Задача 1 
-def lol():
-    import random
-    A = [[random.randint(-100, 100) for j in range(4)] for i in range(7)]
-    positive_sums = [sum(filter(lambda x: x > 0, row)) for row in A]
-    print("Суммы положительных элементов каждой строки:")
-    print(positive_sums)
+"""Статистика по строкам матрицы: суммы, количество ненулевых, минимумы."""
 
-lol()
-#Задача 2 
 import random
 
-def create_matrix(M):
-    A = [[random.randint(0, 9) for j in range(M)] for i in range(M)]
-    return A
 
-def count_nonzero_elements(row):
+def create_matrix(rows, cols, low=0, high=9):
+    return [[random.randint(low, high) for _ in range(cols)] for _ in range(rows)]
+
+
+def print_matrix(matrix):
+    print("Матрица A:")
+    for row in matrix:
+        print(row)
+
+
+def count_nonzero(row):
     return sum(1 for element in row if element != 0)
 
-M = 5
-A = create_matrix(M)
 
-print("Матрица A:")
-for row in A:
-    print(row)
+# Задача 1. Сумма положительных элементов каждой строки матрицы 7x4
+a = create_matrix(7, 4, -100, 100)
+print_matrix(a)
+print("Суммы положительных элементов каждой строки:")
+print([sum(x for x in row if x > 0) for row in a])
 
-nonzero_counts = [count_nonzero_elements(row) for row in A]
-
+# Задача 2. Количество ненулевых элементов в каждой строке квадратной матрицы
+a = create_matrix(5, 5)
+print_matrix(a)
 print("Количество ненулевых элементов в каждой строке:")
-print(nonzero_counts)
+print([count_nonzero(row) for row in a])
 
-#Задача 3 
-import random
-
-def create_matrix(M, N):
-    A = [[random.randint(0, 9) for _ in range(N)] for _ in range(M)]
-    return A
-
-def find_min_elements(row):
-    return min(row)
-
-M = 5
-N = 4
-A = create_matrix(M, N)
-
-print("Матрица A:")
-for row in A:
-    print(row)
-
-min_elements = [find_min_elements(row) for row in A]
-
+# Задача 3. Минимальный элемент каждой строки
+a = create_matrix(5, 4)
+print_matrix(a)
 print("Минимальные элементы в каждой строке:")
-print(min_elements)
-#Задача 4
+print([min(row) for row in a])
 
-import random
-
-def frfr(M, N):
-    A = [[random.randint(0, 9) for _ in range(N)] for _ in range(M)]
-    return A
-
-def lolkek(row):
-    return sum(1 for elem in row if elem != 0)
-
-M = 5
-N = 4
-A = frfr(M, N)
-
-print("Матрица A:")
-for row in A:
-    print(row)
-
-lolkek = [count_nonzero_elements(row) for row in A]
-
+# Задача 4. Количество ненулевых элементов в каждой строке матрицы 5x4
+a = create_matrix(5, 4)
+print_matrix(a)
 print("Количество ненулевых элементов в каждой строке:")
-print(lolkek)
-
+print([count_nonzero(row) for row in a])
